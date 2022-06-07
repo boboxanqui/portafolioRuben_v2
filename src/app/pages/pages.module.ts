@@ -8,6 +8,9 @@ import { BookComponent } from './book/book.component';
 import { ContactComponent } from './contact/contact.component';
 import { CommonComponent } from './common/common.component';
 import { HomeRoutingModule } from './home-routing.module';
+import { NavbarComponent } from '../shared/navbar/navbar.component';
+import { FooterComponent } from '../shared/footer/footer.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -19,11 +22,14 @@ import { HomeRoutingModule } from './home-routing.module';
     ResumeComponent,
     BookComponent,
     ContactComponent,
-    CommonComponent
+    CommonComponent,
+    // NavbarComponent,
+    // FooterComponent
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    SharedModule
   ]
 })
 export class PagesModule { }
