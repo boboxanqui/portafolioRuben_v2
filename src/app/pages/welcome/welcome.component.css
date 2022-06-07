@@ -1,0 +1,32 @@
+#welcomeImg{
+    z-index: -1;
+    opacity: 0.9;
+    user-select: none;
+    animation: fadeIn 1s ease-out;
+  }
+
+  .welcomeText{
+    z-index: 1;
+    font-size: 2rem;
+    animation: fadeIn 1s ease-out .6s both;
+  }
+
+  .btn {
+    animation: fadeIn 1s ease-out 4s both;
+  }
+
+
+  /* Animations */
+
+  @keyframes inFromLeft {
+      0% { transform: translateX(-100vw); opacity: 0.5;}
+      100% { opacity: 1;}
+  }
+  @keyframes inFromRight {
+      0% { transform: translateX(200px); opacity: 0.1;}
+      100% { opacity: 0.9;}
+  }
+  @keyframes fadeIn {
+      0% { opacity: 0;}
+      100% { opacity: 0.9;}
+  }

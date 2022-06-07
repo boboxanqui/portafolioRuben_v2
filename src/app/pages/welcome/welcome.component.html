@@ -1,12 +1,24 @@
-<div class="row vw-100 vh-100 bg-black">
-    <div class="position-fixed p-0 text-white h-100 top-50">
-        <h1 class="text-white-50 display-5  ps-4 ">Soy</h1>
-        <h1 class="h1 ps-4 ">Ruben Aguilar Maseli</h1>
-        <h3 class="text-white-50 fst-italic fw-lighter ps-4 ">Actor</h3>
+<div class="row vw-100 vh-100 m-0 bg-black" (click)="comeIn()">
+    <!-- Text +lg -->
+    <div class="welcomeText d-none d-lg-block position-fixed p-0 text-white h-100 top-50 bottom-0">
+        <h1 class="text-white-50 display-3 ps-5 ">Soy</h1>
+        <h1 class="h1 ps-5 display-3 mt-2 mb-4">Rubén Aguilar Maseli</h1>
+        <h3 class="text-white-50 fst-italic fw-lighter ps-5 ">Actor</h3>
+        <div class="col-5 ps-4 mt-5 d-flex justify-content-center">
+            <button class="btn btn-lg btn-outline-warning">Conóceme</button>
+        </div>
     </div>
-    <div class="col col-lg-8 ms-auto p-0 text-center border border-danger vh-100" >
-        <img class="img-fluid opacity-75 top-lg-0 bottom-0 mx-auto" 
-            src="../../../assets/img/Ruben_welcome_B&W.png" 
+    <!-- Text -lg -->
+    <div class="welcomeText d-block d-lg-none mb-5 position-fixed p-0 text-white bottom-0 text-center">
+        <button class="btn btn-lg btn-outline-warning mb-4">Conóceme</button>
+        <!-- <h1 class="text-white-50 display-3 ps-4 ">Soy</h1> -->
+        <h1 class="h1 display-3 mt-2 mb-3">Rubén Aguilar Maseli</h1>
+        <h3 class="text-white-50 fst-italic fw-lighter">Actor</h3>
+    </div>
+    <!-- Img -->
+    <div class="col col-lg-8 pt-4 ms-auto p-0 text-center vh-100 overflow-hidden" >
+        <img class="img-fluid top-lg-0 bottom-0 mx-auto " 
+            src="../../../assets/img/Ruben_welcome_B&W_4.png" 
             alt="" 
             id="welcomeImg">
     </div>
