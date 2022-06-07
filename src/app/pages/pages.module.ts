@@ -6,6 +6,8 @@ import { BioComponent } from './bio/bio.component';
 import { ResumeComponent } from './resume/resume.component';
 import { BookComponent } from './book/book.component';
 import { ContactComponent } from './contact/contact.component';
+import { CommonComponent } from './common/common.component';
+import { HomeRoutingModule } from './home-routing.module';
 
 
 
@@ -16,10 +18,12 @@ import { ContactComponent } from './contact/contact.component';
     BioComponent,
     ResumeComponent,
     BookComponent,
-    ContactComponent
+    ContactComponent,
+    CommonComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    HomeRoutingModule
   ]
 })
 export class PagesModule { }

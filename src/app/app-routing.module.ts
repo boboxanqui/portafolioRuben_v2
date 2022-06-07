@@ -9,12 +9,8 @@ import { WelcomeComponent } from './pages/welcome/welcome.component';
 
 const routes: Routes = [
   {path: '', component: WelcomeComponent},
-  {path: 'bienvenida', component: HomeComponent},
-  {path: 'biografia', component: BioComponent},
-  {path: 'trayectoria', component: ResumeComponent},
-  {path: 'galeria', component: BookComponent},
-  {path: 'contacto', component: ContactComponent},
-  {path: '**', redirectTo: 'bienvenida'},
+  {path: '', loadChildren: () => import( '../app/pages/pages.module' ).then( m => m.PagesModule )}
+
 ];
 
 @NgModule({
