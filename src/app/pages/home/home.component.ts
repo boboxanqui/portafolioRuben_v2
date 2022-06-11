@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-home',
@@ -6,11 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styles: [
   ]
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
-  constructor() { }
+  images: string[] = [
+    '../assets/img/galeria/galeria-1',
+    '../assets/img/galeria/galeria-2',
+    '../assets/img/galeria/galeria-3',
+    '../assets/img/galeria/galeria-4',
+  ]
 
-  ngOnInit(): void {
-  }
+  constructor( private carrousel: NgbCarouselConfig ) { }
+
 
 }
