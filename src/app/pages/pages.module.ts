@@ -11,6 +11,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { NavbarComponent } from '../shared/navbar/navbar.component';
 import { FooterComponent } from '../shared/footer/footer.component';
 import { SharedModule } from '../shared/shared.module';
+import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -23,13 +24,13 @@ import { SharedModule } from '../shared/shared.module';
     BookComponent,
     ContactComponent,
     CommonComponent,
-    // NavbarComponent,
-    // FooterComponent
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
-    SharedModule
+    SharedModule,
+    NgbCarouselModule,
+    NgbModule
   ]
 })
 export class PagesModule { }

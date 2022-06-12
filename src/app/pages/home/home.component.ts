@@ -4,19 +4,20 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styles: [
-  ]
+  styleUrls: ['home.component.css']
 })
 export class HomeComponent {
 
   images: string[] = [
-    '../assets/img/galeria/galeria-1',
-    '../assets/img/galeria/galeria-2',
-    '../assets/img/galeria/galeria-3',
-    '../assets/img/galeria/galeria-4',
+    '../../../assets/img/galeria/galeria-1.webp',
+    '../../../assets/img/galeria/galeria-2.webp',
+    '../../../assets/img/galeria/galeria-7.webp',
+    '../../../assets/img/galeria/galeria-8.webp',
   ]
 
-  constructor( private carrousel: NgbCarouselConfig ) { }
+  constructor( private carrousel: NgbCarouselConfig ) {
+    carrousel.pauseOnHover = false;
+   }
 
 
 }

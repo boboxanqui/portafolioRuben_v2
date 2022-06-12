@@ -15,8 +15,6 @@ import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     CommonModule,
     RouterModule,
-    NgbCarouselModule,
-    NgbModule
   ],
   exports: [
     NavbarComponent,

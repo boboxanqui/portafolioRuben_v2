@@ -1,0 +1,7 @@
+.picsum-img-wrapper img{
+    width: 100%;
+    height: min(70vh,800px);
+    object-fit: cover;
+    object-position: center;
+    /* overflow: hidden; */
+}

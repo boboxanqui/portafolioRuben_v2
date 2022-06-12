@@ -6,8 +6,26 @@
     box-sizing: border-box;
 }
 
+/* DISPLAY */
+
+app-common {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+footer {
+    height: 60px;
+}
+
+
 /* COMMON CLASSES */
 
 .cursor-pointer{
     cursor: pointer;
 }
+
+
+/* IDs */
+
