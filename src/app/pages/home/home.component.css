@@ -31,9 +31,9 @@ section:nth-child(1) {
 
 .section img {
     object-fit: contain;
-    object-position: top;
-    height: max(60vh,300px);
-    max-height: 800px;
+    object-position: center;
+    /* height: max(60vh,300px); */
+    max-height: 600px;
 }
 
 .section-corner{
@@ -41,8 +41,4 @@ section:nth-child(1) {
     max-width: 70%;
     height: 10vw;
     max-height: 70%;
-}
-
-.divider{
-
 }
