@@ -1,43 +1,45 @@
-<header class="bg-light py-3 text-center">
-    <h1 class="display-3 m-0">Rubén Aguilar Maseli</h1>
+<header class="d-none d-md-block text-center" [ngClass]="bigHeader ? 'p-0' : 'py-3'">
+    <h1 [ngClass]="bigHeader ? 'display-6 mt-1' : 'display-3'">Rubén Aguilar Maseli</h1>
 </header>
 
-<div class="navbar navbar-expand-md navbar-light bg-light border-bottom">
+<div class="navbar navbar-expand-md navbar-light p-0">
     
     <div class="container-fluid">
         <!-- <a class="navbar-brand  top-0 mt-2" routerLink="bienvenida" id="logo">Rubén Aguilar Maseli</a> -->
-        <button class="navbar-toggler ms-auto" 
-                type="button" 
-                data-bs-toggle="collapse" 
-                data-bs-target="#navbarSupportedContent" 
-                aria-controls="navbarSupportedContent" 
-                aria-expanded="false" 
-                aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+
+            <h1 class="d-md-none mx-auto my-3 pe-5">Rubén Aguilar Maseli</h1>
+            <button class="navbar-toggler position-absolute top-0 end-0  my-3 me-1" 
+                    type="button" 
+                    data-bs-toggle="collapse" 
+                    data-bs-target="#navbarSupportedContent" 
+                    aria-controls="navbarSupportedContent" 
+                    aria-expanded="false" 
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0 user-select-none">
 
-            <li class="nav-item fs-5">
+            <li class="nav-item fs-5 border-bottom">
                 <a class="nav-link mx-auto mx-md-1 mx-lg-4 ps-5 ps-md-0 cursor-pointer" 
                     routerLink="bienvenida" 
                     routerLinkActive="active">Inicio</a>
             </li>
-            <li class="nav-item fs-5">
+            <li class="nav-item fs-5 border-bottom">
                 <a class="nav-link mx-auto mx-md-1 mx-lg-4 ps-5 ps-md-0 cursor-pointer" 
                     routerLink="biografia" 
                     routerLinkActive="active">Biografía</a>
             </li>
 
-            <li class="nav-item fs-5 ">
+            <li class="nav-item fs-5 border-bottom">
                 <a class="nav-link mx-auto mx-md-1 mx-lg-4 ps-5 ps-md-0 cursor-pointer" 
                     routerLink="trayectoria" 
                     routerLinkActive="active">Trayectoria</a>
             </li>
 
-            <li class="nav-item fs-5 ">
+            <li class="nav-item fs-5 border-bottom">
                 <a class="nav-link mx-auto mx-md-1 mx-lg-4 ps-5 ps-md-0 cursor-pointer" 
                     routerLink="galeria" 
                     routerLinkActive="active">Galeria</a>

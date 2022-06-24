@@ -8,6 +8,11 @@
 
 /* DISPLAY */
 
+header,
+header h1{
+    transition: .3s ease-out;
+}
+
 app-common {
     min-height: 100vh;
     display: flex;

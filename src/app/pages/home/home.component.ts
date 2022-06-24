@@ -17,6 +17,7 @@ export class HomeComponent {
 
   constructor( private carrousel: NgbCarouselConfig ) {
     carrousel.pauseOnHover = false;
+    carrousel.interval = 3000
    }
 
 
