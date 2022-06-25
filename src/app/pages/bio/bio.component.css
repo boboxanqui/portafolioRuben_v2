@@ -1,0 +1,11 @@
+#bg-biografia{
+    height: auto;
+    width: 100vw;
+    z-index: -1;
+    position: fixed;
+    top: 100px;
+}
+
+.bg-gap{
+    height: 40vh;
+}
