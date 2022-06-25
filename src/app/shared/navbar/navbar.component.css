@@ -1,0 +1,32 @@
+/* Menu Button */
+
+.navbar-toggler{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 30px;
+    margin: 20px 5% 0 0;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+    transition: .3s ease;
+}
+
+.menu-btn-line{
+    background-color: #999;
+    margin: 0;
+    width: 26px;
+    height: 3px;
+    border-radius: 100px;
+    transition: .3s ease;
+}
+
+.menu-btn-opened span:nth-child(1) {
+    transform: rotate(45deg) translateY(6px) translateX(7px);
+}
+.menu-btn-opened span:nth-child(2) {
+    opacity: 0;
+}
+.menu-btn-opened span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-7px) translateX(7px);
+}

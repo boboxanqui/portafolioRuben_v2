@@ -5,7 +5,7 @@ import { fromEvent, map, Observable } from 'rxjs';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styles: [
+  styleUrls: [ './navbar.component.css'
   ]
 })
 export class NavbarComponent implements OnInit{
@@ -19,6 +19,7 @@ export class NavbarComponent implements OnInit{
   }
 
   private _bigHeader: boolean = false;
+  menuCollapsed: boolean = true;
 
   scrollY$: Observable<boolean> = fromEvent(
     document,'scroll'
