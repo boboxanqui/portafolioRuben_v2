@@ -1,11 +1,10 @@
 #bg-biografia{
-    height: auto;
-    width: 100vw;
+    background: url(../../../assets/img/biografia/biografia-bg_2500x1400.webp) center/cover no-repeat;
+    min-width: 100%;
+    min-height: 100%;
     z-index: -1;
     position: fixed;
-    top: 100px;
+    top: 50px;
+    
 }
 
-.bg-gap{
-    height: 40vh;
-}

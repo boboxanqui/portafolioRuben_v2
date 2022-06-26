@@ -1,0 +1,8 @@
+#bg-trayectoria{
+    background: url(../../../assets/img/trayectoria/trayectoria-bg_2000x2000.webp) center/cover no-repeat;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    position: fixed;
+    top: 50px;
+}

@@ -42,3 +42,7 @@ section:nth-child(1) {
     height: 10vw;
     max-height: 70%;
 }
+
+.divider{
+    max-width: 300px;
+}
