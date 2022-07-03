@@ -1,4 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+/* SWIPER */
+
+/* @import "../node_modules/swiper/swiper.min.css";
+@import "../node_modules/swiper/swiper-bundle.css";
+@import "../node_modules/swiper/swiper-bundle.min.css"; */
+
+/* GENERAL STYLES */
 
 *{
     padding: 0;
@@ -7,7 +13,9 @@
 }
 
 html{
-    scroll-behavior: auto !important
+    /* overflow-y: overlay; */
+    scroll-behavior: auto !important;
+    /* overflow-x: hidden; */
 }
 
 body{
@@ -43,6 +51,85 @@ footer {
     height: 50vh;
 }
 
+/* SWIPER CUSTOM */
 
-/* IDs */
+.swiper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    padding: 5%;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    user-select: none;
+}
 
+.swiper::-webkit-scrollbar {
+    display: none;
+}
+
+.swiper-wrapper{
+  display: flex;
+  flex-direction: row;
+}
+  
+.swiper-slide img {
+    user-select: auto;
+    display: block;
+    width: 100vw;
+    height: 100%;
+    object-fit: contain;
+}
+
+.swiper-controls{
+    z-index: 3000;
+    cursor: pointer;
+}
+
+.btn-swiper{
+    
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ccc;
+    border-radius: 50%;
+    transition: .1s ease;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #ccc;
+    padding: 40px;
+    transition: .1s ease;
+    border-radius: 50%;
+}
+
+.btn-swiper:hover,
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    text-shadow: 0 0 5px rgb(0, 0, 0);
+    color: #fff;
+}
+
+.btn-swiper:active,
+.swiper-button-next:active,
+.swiper-button-prev:active {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.swiper-pagination-bullet{
+    width: 20px;
+    height: 20px;
+    background-color: snow;
+}
+.swiper-pagination-bullet-active{
+    background-color: #ccc;
+}
+
+/* .swiper-slide-prev,
+.swiper-slide-next {
+    display: none;
+} */

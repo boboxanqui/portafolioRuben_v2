@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import SwiperCore, { SwiperOptions } from 'swiper';
+import { Component, OnInit, TemplateRef } from '@angular/core';
+import { ModalDismissReasons, NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { SwiperComponent } from 'swiper/angular';
 
 @Component({
   selector: 'app-book',
@@ -7,31 +8,37 @@ import SwiperCore, { SwiperOptions } from 'swiper';
   styleUrls: [ './book.component.css' ]
 })
 
-export class BookComponent  {
+export class BookComponent implements OnInit  {
 
-  constructor() {
+  constructor( private modalService: NgbModal ) {
+  }
+  
+  ngOnInit(): void {   
+
     for( let i = 1; i <= this.numPics; i++ ){
       this.pics.push(`../../../assets/img/galeria/galeria-${i}.webp`)
     }
-   }
+    
+  }
 
   numPics: number = 18;
   pics: string[] = []
+  showSwiper: boolean = false;
+  showSlide: number = 0;
 
-  config: SwiperOptions = {
-    slidesPerView: 3,
-    spaceBetween: 50,
-    navigation: true,
-    pagination: { clickable: true },
-    scrollbar: { draggable: true },
+  launchSwiper( slide: number, content: TemplateRef<HTMLElement> ){
+    this.showSlide = slide;
+    this.modalService.open(content, {
+      animation: false,
+      centered: true,
+
+    });
   }
 
-  onSwiper( [swiper]: any ){
-    console.log(swiper);
-  }
+  closeResult = '';
 
-  onSlideChange() {
-    console.log('slide change');
+  open(content: TemplateRef<HTMLElement>) {
+    this.modalService.open(content);
   }
 
 }

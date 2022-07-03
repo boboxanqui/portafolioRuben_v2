@@ -14,7 +14,7 @@ import { SharedModule } from '../shared/shared.module';
 
 import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SwiperModule } from 'swiper/angular';
-
+import { SwiperComponent } from './swiper/swiper.component';
 
 
 
@@ -27,6 +27,7 @@ import { SwiperModule } from 'swiper/angular';
     BookComponent,
     ContactComponent,
     CommonComponent,
+    SwiperComponent,
   ],
   imports: [
     CommonModule,
@@ -35,6 +36,6 @@ import { SwiperModule } from 'swiper/angular';
     NgbCarouselModule,
     NgbModule,
     SwiperModule
-  ]
+  ],
 })
 export class PagesModule { }
