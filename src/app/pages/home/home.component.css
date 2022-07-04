@@ -1,32 +1,14 @@
 .picsum-img-wrapper img{
     width: 100%;
-    height: max(70vh,300px);
+    height: max(60vh,300px);
     max-height: 1200px;
     object-fit: cover;
-    object-position: center;
+    object-position: 50% 30%;
     /* overflow: hidden; */
 }
 
-/* .section{
-    height: max(60vh,400px);
-    max-height: 800px;
-} */
-
-/* #section-1,
-#carrousel{
-    background-color: beige;
-}
-
-#section-2{
-    background-color: rgba(0, 128, 0, 0.150)
-}
-
-#section-3{
-    background-color: rgba(0, 140, 255, 0.150);
-} */
-
-section:nth-child(1) {
-    background-color: red;
+section {
+    background-color: #eee;
 }
 
 .section img {

@@ -4,12 +4,22 @@
 @import "../node_modules/swiper/swiper-bundle.css";
 @import "../node_modules/swiper/swiper-bundle.min.css"; */
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap');
+:root{
+    --color-1:#F3F4ED;
+    --color-2:#536162;
+    --color-3:#424642;
+    --color-4:#C06014;
+}
+
 /* GENERAL STYLES */
 
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    /* font-family: 'Playfair Display', serif; */
 }
 
 html{
@@ -24,9 +34,22 @@ body{
 
 /* DISPLAY */
 
+nav{
+    background-color: var(--color-3);
+    color: var(--color-1) !important;
+}
+
 header,
 header h1{
     transition: .3s ease-out;
+    font-family: 'Oswald', sans-serif;
+}
+
+.navbar-nav .nav-item .nav-link{
+    font-family: 'Oswald', sans-serif ;
+    color: var(--color-1) !important;
+    font-weight: 200;
+    letter-spacing: 1pt;
 }
 
 app-common {
@@ -34,14 +57,22 @@ app-common {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: var(--color-1);
 }
 
 footer {
-    height: 60px;
+    height: 80px;
+    background-color: var(--color-3);
+    
 }
 
 
 /* COMMON CLASSES */
+
+.btn{
+    background-color: var(--color-4);
+    color: var(--color-1);
+}
 
 .cursor-pointer{
     cursor: pointer;
