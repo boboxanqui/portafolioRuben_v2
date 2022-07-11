@@ -9,7 +9,7 @@ SwiperCore.use([Keyboard, Navigation, Pagination, Zoom]);
 @Component({
   selector: 'app-swiper',
   templateUrl: './swiper.component.html',
-  styleUrls: ['./swiper.component.css']
+  styleUrls: ['./swiper.component.scss']
 })
 export class SwiperComponent implements OnInit {
 
