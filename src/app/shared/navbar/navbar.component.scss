@@ -12,6 +12,13 @@
     transition: .3s ease;
 }
 
+.navbar-toggler:focus,
+.navbar-toggler:visited,
+.navbar-toggler:active{
+    border: none !important;
+    outline: none !important;
+}
+
 .menu-btn-line{
     background-color: #999;
     margin: 0;
