@@ -1,6 +1,11 @@
 /* SWIPER */
 
-
+/* REMOVE to let columns config by BS */
+.row{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
 
 .pic-container > .img-fluid {
     min-height: 30vh;
@@ -14,8 +19,6 @@
 
 .pic-container > .img-fluid:hover {
     cursor: pointer;
-    transform: translateZ(100);
-
-
-    
+    transform: scale(1.02);
+    overflow: hidden;
 }
