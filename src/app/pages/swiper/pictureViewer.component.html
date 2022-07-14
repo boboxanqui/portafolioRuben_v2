@@ -1,8 +1,9 @@
-<swiper [config]="config">
+<swiper [config]="config" #swiper>
 
     
     <ng-template swiperSlide>
-        <div class="swiper-zoom-container"  >
+        <div class="bg-closer position-fixed top-0 start-0 bg-warning" (click)="closeSwiper()"></div>
+        <div class="swiper-zoom-container" >
             <img src="../../../assets/img/galeria/galeria-1.webp" alt="">  
         </div>   
     </ng-template>        
@@ -116,7 +117,14 @@
 <div class="swiper-controls row position-fixed top-0 end-0 m-3 px-2" >
 
     <span class="btn-swiper fs-3 user-select-none"
-            (click)="zoomIn()">
+            (click)="zoomOut()"
+            [class.opacity-25]="!zoomed()">
+            <i class="fa-solid fa-magnifying-glass-minus"></i>
+    </span>
+
+    <span class="btn-swiper fs-3 user-select-none"
+            (click)="zoomIn()"
+            [class.opacity-25]="zoomed()">
             <i class="fa-solid fa-magnifying-glass-plus"></i>
     </span>
 

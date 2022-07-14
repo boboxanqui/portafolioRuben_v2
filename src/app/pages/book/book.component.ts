@@ -31,11 +31,9 @@ export class BookComponent implements OnInit  {
     this.modalService.open(content, {
       animation: false,
       centered: true,
-
+      scrollable: true,
     });
   }
-
-  closeResult = '';
 
   open(content: TemplateRef<HTMLElement>) {
     this.modalService.open(content);

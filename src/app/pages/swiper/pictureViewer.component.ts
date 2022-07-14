@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import SwiperCore, { SwiperOptions, Keyboard, Navigation, Pagination, Zoom, Swiper } from 'swiper';
+import { SwiperComponent } from "swiper/angular";
 import { NgbActiveModal, NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 
 
@@ -7,11 +8,11 @@ import { NgbActiveModal, NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstra
 SwiperCore.use([Keyboard, Navigation, Pagination, Zoom]);
 
 @Component({
-  selector: 'app-swiper',
-  templateUrl: './swiper.component.html',
-  styleUrls: ['./swiper.component.scss']
+  selector: 'app-pictureViewer',
+  templateUrl: './pictureViewer.component.html',
+  styleUrls: ['./pictureViewer.component.scss']
 })
-export class SwiperComponent implements OnInit {
+export class pictureViewerComponent implements OnInit {
 
   @Input() slide: number = 0;
   @ViewChild('swiper', {static: false}) swiper?: SwiperComponent;
@@ -27,6 +28,7 @@ export class SwiperComponent implements OnInit {
 
   config: SwiperOptions = {
     centeredSlides: true,
+    
     init: false,
     initialSlide: 0,
     keyboard: true,
@@ -45,14 +47,25 @@ export class SwiperComponent implements OnInit {
   zoomIn(){
     console.log('zoooOOOOO00000OOOOOOooooo.....m');
 
+    this.swiper?.swiperRef.zoom.in()
+
+    console.log(    this.swiper?.swiperRef.zoom.scale
+      );
+    
+
+
     // this.swiper.config.zoom = {minRatio: 3}
 
     // console.log(this.swiper.zoom.scale);
-    
-    // this.swiper.zoom.enable()
-    // this.swiper.zoom.out()
 
+  }
 
+  zoomOut(){
+    this.swiper?.swiperRef.zoom.out()
+  }
+
+  zoomed():boolean{
+    return this.swiper?.swiperRef.zoom.scale! >= 2
   }
 
 

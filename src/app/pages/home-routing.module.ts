@@ -6,7 +6,6 @@ import { CommonComponent } from './common/common.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { ResumeComponent } from './resume/resume.component';
-import { SwiperComponent } from './swiper/swiper.component';
 
 const routes: Routes = [{
   path: '', 
