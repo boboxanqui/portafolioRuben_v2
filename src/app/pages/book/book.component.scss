@@ -1,24 +1,43 @@
 /* SWIPER */
 
 /* REMOVE to let columns config by BS */
-.row{
+.gallery{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
-.pic-container > .img-fluid {
-    min-height: 30vh;
-    max-height: 60vh;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    object-position: 50% 20%;
+.pic-container{
+    min-height: 25vh;
+    max-height: 50vh;
     overflow: hidden;
 }
 
-.pic-container > .img-fluid:hover {
+.pic-container > .img-fluid {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    object-position: 50% 20%;
+    transition: .5s ease-in;
+    transition: transform 1s ease;
+}
+
+.view-icon{
+    font-size: 2rem !important;
+    opacity: 0;
     cursor: pointer;
-    transform: scale(1.02);
-    overflow: hidden;
+    transition: .3s ease-out;
+
+}
+
+.pic-container:hover .view-icon{
+    font-size: 5rem !important;
+    z-index: 1000;
+    opacity: .6;
+}
+
+.pic-container:hover .img-fluid {
+    cursor: pointer;
+    transform: scale(1.10);
+    filter: blur(2px) brightness(80%) saturate(70%);
 }
