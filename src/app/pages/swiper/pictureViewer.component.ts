@@ -67,12 +67,7 @@ export class pictureViewerComponent implements OnInit {
   }
 
   touchEnd( event: any ){
-    console.log( event[1].target );
-    
     const target:HTMLElement = event[1].target
-
-    console.log( target.tagName );
-    
     if ( target.tagName != 'IMG' && !this._zoomed ) {
       this.closeSwiper()
     }
