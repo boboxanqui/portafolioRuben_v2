@@ -27,17 +27,27 @@
     opacity: 0;
     cursor: pointer;
     transition: .3s ease-out;
-
 }
 
 .pic-container:hover .view-icon{
     font-size: 5rem !important;
     z-index: 1000;
-    opacity: .6;
+    opacity: .5;
 }
 
 .pic-container:hover .img-fluid {
     cursor: pointer;
     transform: scale(1.10);
-    filter: blur(2px) brightness(80%) saturate(70%);
+    filter: blur(2px) brightness(70%) saturate(70%);
+}
+
+@media screen and (max-width: 768px)  {
+    .gallery{
+        padding: 10px 20px;
+        grid-template-columns: 1fr ;
+        gap: 40px;
+    }
+    .pic-container{
+        max-height: 70vh;
+    }
 }
