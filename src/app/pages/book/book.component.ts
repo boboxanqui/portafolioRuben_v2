@@ -1,5 +1,6 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { ModalDismissReasons, NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import Swiper from 'swiper';
 import { SwiperComponent } from 'swiper/angular';
 
 @Component({

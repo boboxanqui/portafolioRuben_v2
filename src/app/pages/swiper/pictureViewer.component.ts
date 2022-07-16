@@ -29,7 +29,7 @@ export class pictureViewerComponent implements OnInit {
 
   config: SwiperOptions = {
     centeredSlides: true,
-    centeredSlidesBounds: true,
+
     init: false,
     initialSlide: 0,
     keyboard: true,
@@ -38,7 +38,6 @@ export class pictureViewerComponent implements OnInit {
     pagination: { dynamicBullets: true },
     slidesPerView: 1,
     spaceBetween: 50,
-    touchEventsTarget: 'container',
     zoom: { maxRatio: 2 },
   }
 
@@ -65,6 +64,18 @@ export class pictureViewerComponent implements OnInit {
       event[1] === 1 ? this._zoomed = false : this._zoomed = true;
       // console.log( 'IS IN ANGULAR ZONE -> ', NgZone.isInAngularZone() );
     } )
+  }
+
+  touchEnd( event: any ){
+    console.log( event[1].target );
+    
+    const target:HTMLElement = event[1].target
+
+    console.log( target.tagName );
+    
+    if ( target.tagName != 'IMG' && !this._zoomed ) {
+      this.closeSwiper()
+    }
   }
 
 }

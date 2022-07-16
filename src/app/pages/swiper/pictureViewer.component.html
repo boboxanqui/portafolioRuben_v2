@@ -1,10 +1,10 @@
 <swiper #swiper 
         [config]="config"
-        (zoomChange)="zoomChange( $event )">
+        (zoomChange)="zoomChange( $event )"
+        (touchEnd)="touchEnd( $event )">
 
     
     <ng-template swiperSlide >
-        <!-- <div class="bg-closer position-fixed top-0 start-0 bg-warning" (click)="closeSwiper()"></div> -->
         <div class="swiper-zoom-container">
             <img src="../../../assets/img/galeria/galeria-1.webp" alt="">  
         </div>   
@@ -111,8 +111,6 @@
             <img src="../../../assets/img/galeria/galeria-18.webp" alt="">
         </div>
     </ng-template>
-
-
     
 </swiper>
 
