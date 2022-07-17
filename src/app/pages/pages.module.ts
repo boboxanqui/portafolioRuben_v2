@@ -8,13 +8,14 @@ import { ResumeComponent } from './resume/resume.component';
 import { BookComponent } from './book/book.component';
 import { ContactComponent } from './contact/contact.component';
 import { CommonComponent } from './common/common.component';
+import { pictureViewerComponent } from './swiper/pictureViewer.component';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { SharedModule } from '../shared/shared.module';
 
 import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SwiperModule } from 'swiper/angular';
-import { pictureViewerComponent } from './swiper/pictureViewer.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -35,7 +36,8 @@ import { pictureViewerComponent } from './swiper/pictureViewer.component';
     SharedModule,
     NgbCarouselModule,
     NgbModule,
-    SwiperModule
+    SwiperModule,
+    ReactiveFormsModule
   ],
 })
 export class PagesModule { }
