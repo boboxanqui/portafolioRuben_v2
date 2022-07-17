@@ -1,17 +1,17 @@
 
-<div class="container ">
+<div class="container my-4 ">
 
-    <div class="glass-effect p-5 mx-2 bg-light rounded rounded-3 bg-opacity-25 shadow">
+    <div class="glass-effect p-3 p-md-5 mx-2 bg-light rounded rounded-3 bg-opacity-25 shadow">
 
         <div class="row">
             
-            <h2 class="text-center display-5 mb-5 text-light">Enviar correo</h2>
+            <h2 class="text-center display-5 mb-3 mb-md-5 text-light">Enviar correo</h2>
             
             <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
                 
-                <div class="row pb-4">
-                    
-                    <div class="col-6">
+                <div class="row">
+
+                    <div class="col-12 col-md-6 mb-5">
                         <div class="form-floating ">
                             <input type="text" 
                                 class="form-control"
@@ -22,14 +22,14 @@
                             <label for="nombre">
                                 <span class="text-muted">Nombre</span>
                             </label>
-                            <span class="bg-danger text-light small w-100 rounded-bottom px-2 py-1 mx-1"
+                            <span class="invalid-tooltip lh-sm rounded-0 rounded-bottom mt-0 mx-1"
                             *ngIf="inputInvalid('nombre')">
                             Nombre incorrecto, debe contener 2 carácteres o más.
                             </span>
                         </div>
                     </div>
                     
-                    <div class="col-6">
+                    <div class="col-12 col-md-6 pb-5">
                         <div class="form-floating">
                             <input type="email" 
                                 class="form-control"
@@ -40,7 +40,7 @@
                             <label for="email">
                                 <span class="text-muted">Correo electrónico</span>
                             </label>
-                            <span class="bg-danger text-light small w-100 rounded-bottom px-2 py-1 mx-1"
+                            <span class="invalid-tooltip lh-sm rounded-0 rounded-bottom mt-0 mx-1"
                             *ngIf="inputInvalid('email')">
                             Formato email incorrecto, debe ser algo parecido a <i>example@example.com</i>.
                             </span>
@@ -50,7 +50,7 @@
                 </div>
             
             
-                <div class="col-12 pb-4">
+                <div class="col-12 pb-5">
                     <div class="form-floating">
                         <input type="text" 
                             class="form-control"
@@ -61,7 +61,7 @@
                         <label for="asunto">
                             <span class="text-muted">Asunto</span>
                         </label>
-                        <span class="bg-danger text-light small w-100 rounded-bottom px-2 py-1 mx-1"
+                        <span class="invalid-tooltip lh-sm rounded-0 rounded-bottom mt-0 mx-1"
                             *ngIf="inputInvalid('asunto')">
                             Asunto incorrecto, debe contener 2 carácteres o más.
                         </span>
@@ -85,16 +85,21 @@
                                 *ngIf="inputLength('mensaje') > 0">({{ inputLength('mensaje') }}/500)
                             </span>
                         </label>
-                        <span class="bg-danger text-light small rounded-bottom px-2 py-1 mx-1 float-end"
+                        <span class="invalid-tooltip lh-sm rounded-0 rounded-bottom mt-0 mx-1"
                             *ngIf="inputInvalid('mensaje')">
                             {{ mensajeError() }}
                         </span>
                     </div>
                 </div>        
             
-                <div class="col-12  my-4">
-                    <button type="submit" 
-                    class="btn btn-lg btn-outline-light float-end">Enviar</button>
+                <div class="row my-4">
+                    <div class="col-12 col-md-10 my-3 my-md-0 text-center text-md-end">
+                        <h2 class="text-danger">CAPTCHA</h2>
+                    </div>
+                    <div class="col-12 col-md-2 text-center text-md-end">
+                        <button type="submit" 
+                        class="btn btn-lg btn-outline-light">Enviar</button>
+                    </div>
                 </div>
             
             </form>
@@ -112,10 +117,18 @@
         
     </code> -->
     
-        <div class="row">
+        <div class="row my-5">
             
-            <h2 class="text-center display-5 mb-5 text-light">Redes sociales</h2>
+            <h2 class="text-center display-5 text-light">Redes sociales</h2>
 
+            <div class="d-flex justify-content-center gap-4 my-4 display-2">
+                <a href="https://www.instagram.com/r_maseli/" target="_blank" class="text-light icon-instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a> 
+                <a href="https://www.imdb.com/" target="_blank" class="text-light icon-imdb">
+                    <i class="fa-brands fa-imdb"></i>
+                </a>
+            </div>
 
         </div>
 
