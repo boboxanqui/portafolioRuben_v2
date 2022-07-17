@@ -1,8 +1,12 @@
-#bg-trayectoria{
-    background: url(../../../assets/img/trayectoria/trayectoria-bg_2000x2000.webp) center/cover no-repeat;
-    min-width: 100%;
-    min-height: 100%;
-    z-index: -1;
-    position: fixed;
-    top: 50px;
+.bg-trayectoria-1{
+    background-image: url(../../../assets/img/trayectoria/trayectoria-bg_2000x2000.webp);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+.bg-trayectoria-2{
+    background-image: url(../../../assets/img/trayectoria/bg-trayectoria-2_1500x1500.webp);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 70% 50%;
 }
