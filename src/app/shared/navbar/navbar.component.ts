@@ -13,22 +13,27 @@ export class NavbarComponent implements OnInit{
   constructor( private viewport:ViewportScroller ) { }
 
   ngOnInit(): void {
-      this.scrollY$.subscribe( resp => {
-        setTimeout( () => this._bigHeader = resp, 100 )
+      this.scrollY$.subscribe( scrollY => {
+        if( scrollY > 200 ){
+          this._litHeader = true;
+        }
+        if( scrollY == 0 ){
+          this._litHeader = false;
+        }
       } )
   }
 
-  private _bigHeader: boolean = false;
+  private _litHeader: boolean = false;
   menuCollapsed: boolean = true;
 
-  scrollY$: Observable<boolean> = fromEvent(
+  scrollY$: Observable<number> = fromEvent(
     document,'scroll'
     ).pipe(
-      map( () => this.viewport.getScrollPosition()[1] != 0)
+      map( () => this.viewport.getScrollPosition()[1])
     )
     
-  get bigHeader() {
-    return this._bigHeader;
+  get litHeader() {
+    return this._litHeader;
   }
   
   
