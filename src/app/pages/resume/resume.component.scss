@@ -7,18 +7,52 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;     
-    
+
+
+    overflow: hidden;    
+    mask-image: url(../../../assets/img/trayectoria/trayectoria-bg_2000x2000.webp);
+    -webkit-mask-image: url(../../../assets/img/trayectoria/trayectoria-bg_2000x2000.webp);
 }
 
 
 .bg-trayectoria-2{
-    background: url(../../../assets/img/trayectoria/bg-trayectoria-2_1500x1500.webp) 70% 50%/cover no-repeat;
-    min-width: 100%;
-    min-height: 100%;
-    z-index: -1;
-    position: fixed;
-    top: 50px;
+    background-image: url(../../../assets/img/trayectoria/bg-trayectoria-2_1500x1500.webp);
+    background-repeat: no-repeat; 
+    background-position: 70% 50%;
+    background-attachment: fixed;       
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;  
+
+    overflow: hidden;
+    mask-image: url(../../../assets/img/trayectoria/bg-trayectoria-2_1500x1500.webp);
+    -webkit-mask-image: url(../../../assets/img/trayectoria/bg-trayectoria-2_1500x1500.webp);
 }
 
+.img-trayectoria-1{
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
+    height: 100vh;
+    width: 100vw;
+}
+
+.img-trayectoria-2{
+    object-fit: cover;
+    object-position: 70% 50%;
+    z-index: -2;
+    height: 100vh;
+    width: 100vw;
+}
+
+
+@media screen and (max-width: 768px)  {
+    .bg-trayectoria-1,
+    .bg-trayectoria-2 {
+        background: none;
+    }
+
+}
 
 
