@@ -16,6 +16,8 @@ import { SharedModule } from '../shared/shared.module';
 import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SwiperModule } from 'swiper/angular';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RecaptchaFormsModule, RecaptchaModule, RecaptchaSettings, RECAPTCHA_SETTINGS } from 'ng-recaptcha';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -37,7 +39,17 @@ import { ReactiveFormsModule } from '@angular/forms';
     NgbCarouselModule,
     NgbModule,
     SwiperModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RecaptchaFormsModule,
+    RecaptchaModule
   ],
+  providers: [
+    {
+      provide: RECAPTCHA_SETTINGS,
+      useValue: {
+        siteKey: environment.reCaptcha.webKey,
+      } as RecaptchaSettings,
+    },
+  ]
 })
 export class PagesModule { }

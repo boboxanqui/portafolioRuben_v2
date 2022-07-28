@@ -1,6 +1,8 @@
 import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, NgForm, ValidationErrors, Validators } from '@angular/forms';
+import { environment } from 'src/environments/environment';
+import { notARobotService } from '../services/notARobot.service';
 
 @Component({
   selector: 'app-contact',
@@ -8,21 +10,33 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: [ './contact.component.scss'  ]
 })
 export class ContactComponent implements OnInit {
-
-  constructor( private fb: FormBuilder ) { }
-
-  ngOnInit(): void {
+  
+  constructor( 
+    private fb: FormBuilder,
+    private notARobot: notARobotService
+    ) {
+      this.operationResult = 2
+    }
+    
+    ngOnInit(): void {
       this.submitted = false;
-  }
-
+      this.notARobot.newOperation();
+      console.log(this.operationResult);
+      
+    }
+    
   emailPattern: RegExp = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
   submitted:boolean = false;
+  operationResult: number = 0
+  siteKey: string = environment.reCaptcha.webKey
 
   contactForm: FormGroup = this.fb.group({
     nombre: [ '', [Validators.required, Validators.minLength(2)] ],
     email: [ '', [Validators.required, Validators.pattern(this.emailPattern)] ],
     asunto: [ '', [Validators.required, Validators.minLength(2)] ],
-    mensaje: [ '', [Validators.required, Validators.maxLength(500)] ]
+    mensaje: [ '', [Validators.required, Validators.maxLength(500)] ],
+    operation: ['', [Validators.required ] ],
+    recaptcha: ['', [Validators.required] ]
   })
 
   inputValid( input: string ):boolean {
@@ -56,7 +70,43 @@ export class ContactComponent implements OnInit {
 
   onSubmit(){
     this.submitted = true;
+  }
 
+  // ReCaptcha
+
+  resolved( response: string ){
+    console.log(response);
+  }
+
+
+  // Not A Robot Service METHODS 
+
+  get num1() {
+    return this.notARobot.num1
+  }
+  get num2() {
+    return this.notARobot.num2
+  }
+  get operator() {
+    return this.notARobot.operator
+  }
+
+  checkResult( control: AbstractControl ): ValidationErrors | null {
+    // if( this.operationResult === undefined ) return { result: false }
+    if( control.value === this.operationResult ){
+      return null
+    }
+    return { result: false }
+  }
+
+
+  isOdd( control: FormControl ){
+    return control.value % 2 ? { less: true } : null
+  }
+
+  isTwoFromService ( control: FormControl ){
+    if( this.notARobot.isTwo( control.value ) ) return { odd: true }
+    return null
   }
 
 }

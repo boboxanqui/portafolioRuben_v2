@@ -93,8 +93,24 @@
                 </div>        
             
                 <div class="row my-4">
-                    <div class="col-12 col-md-10 my-3 my-md-0 text-center text-md-end">
-                        <h2 class="text-danger">CAPTCHA</h2>
+                    <div class="col-12 col-md-4 offset-md-6 col-xl-2 offset-xl-8 my-3 my-md-0 text-center">
+                        <!-- <div class="input-group input-group-lg mx-auto num-input">
+                          <div class="input-group-text bg-primary text-light">
+                            <span>{{ num1 }}</span>
+                            <span class="mx-2 text-light">{{ operator }}</span>
+                            <span>{{ num2 }}</span>
+                          </div>
+                          <input type="number" 
+                                class="form-control"
+                                min="0"
+                                max="100"
+                                formControlName="operation">
+                        </div> -->
+                        <re-captcha id="recaptcha"
+                                    [siteKey]="siteKey"
+                                    (resolved)="resolved($event)">
+                        </re-captcha>
+
                     </div>
                     <div class="col-12 col-md-2 text-center text-md-end">
                         <button type="submit" 
@@ -105,17 +121,18 @@
             </form>
         </div>
     
-    <!-- <code>
+    <code>
         <ul>
             <li>Nombre - {{ inputValid('nombre') }}</li>
             <li>Email - {{ inputValid('email') }}</li>
             <li>Asunto - {{ inputValid('asunto') }}</li>
             <li>Mensaje - {{ inputValid('mensaje') }} - {{ inputLength('mensaje') }} - {{ contactForm.controls['mensaje'].errors | json }}</li>
+            <li>Operación - {{ inputValid('operation') }}</li>
             <li class="mt-3">FORM - {{ formValid() }} - {{ formStatus() }}</li>
             <li>SUBMITTED - {{ submitted }}</li>
         </ul>
         
-    </code> -->
+    </code>
     
         <div class="row my-5">
             
@@ -138,4 +155,8 @@
 </div>
 
 <!-- BACKGROUND IMAGE -->
-<div class="bg-img"></div>
+<div class="bg-transparent">
+    <img src="../../../assets/img/contacto/contacto_2000x2000.webp" 
+        alt=""
+        class="img-background">
+</div>

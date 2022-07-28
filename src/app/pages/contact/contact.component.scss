@@ -4,25 +4,16 @@
     max-height: 500px;
 }
 
-.bg-img{
-    position: fixed;
-    top: 50px;
-    left: 0px;
-    height: 100vh;
-    width: 100vw;
-    z-index: -1;
-    background-image: url(../../../assets/img/contacto/contacto_2000x2000.webp);
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-}
-
 .glass-effect{
     // background: rgba(255, 255, 255, 0.3);
     // border-radius: 16px;
     // box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
+}
+
+.num-input{
+    width: 180px;
 }
 
 .icon-contact{

@@ -68,6 +68,17 @@ app-common {
 
 .bg-gap{
     height: 50vh;
+    overflow: hidden;
+}
+
+.img-background{
+    position: fixed;
+    top: 50px;
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
+    height: 100vh;
+    width: 100vw;
 }
 
 /* ==================== SWIPER CUSTOM ==================== */
