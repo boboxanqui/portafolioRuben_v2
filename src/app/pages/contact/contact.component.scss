@@ -35,3 +35,14 @@
     filter: none;
 
 }
+
+/* RECAPTCHA */
+
+.recaptcha{
+    width: min-content;
+}
+
+.recaptchaError{
+    z-index: -1;
+    transform: translateY(-5px);
+}

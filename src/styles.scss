@@ -177,6 +177,14 @@ app-common {
     }
 }
 
+@media screen and (max-width: 400px) {
+    .recaptcha {
+        transform:scale(0.75);
+        transform-origin:0 0;
+    }
+
+}
+
 
 /* ==================== ANIMATIONS ==================== */
 

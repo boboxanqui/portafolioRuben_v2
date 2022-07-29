@@ -13,8 +13,8 @@ export class ContactComponent implements OnInit {
   
   constructor( 
     private fb: FormBuilder,
-    private notARobot: notARobotService
-    ) {
+    private notARobot: notARobotService,
+  ) {
       this.operationResult = 2
     }
     
@@ -35,7 +35,7 @@ export class ContactComponent implements OnInit {
     email: [ '', [Validators.required, Validators.pattern(this.emailPattern)] ],
     asunto: [ '', [Validators.required, Validators.minLength(2)] ],
     mensaje: [ '', [Validators.required, Validators.maxLength(500)] ],
-    operation: ['', [Validators.required ] ],
+    // operation: ['', [Validators.required ] ],
     recaptcha: ['', [Validators.required] ]
   })
 
@@ -70,12 +70,20 @@ export class ContactComponent implements OnInit {
 
   onSubmit(){
     this.submitted = true;
+    if( this.formValid() ){
+      
+    }
   }
 
   // ReCaptcha
 
   resolved( response: string ){
     console.log(response);
+  }
+
+  errorFound( response: any ){
+    console.log(response);
+    
   }
 
 
