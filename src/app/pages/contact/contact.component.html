@@ -42,7 +42,7 @@
                             </label>
                             <span class="invalid-tooltip lh-sm rounded-0 rounded-bottom mt-0 mx-1"
                             *ngIf="inputInvalid('email')">
-                            Formato email incorrecto, debe ser algo parecido a <i>example@example.com</i>.
+                            Formato incorrecto, debe ser algo parecido a <i>example@example.com</i>
                             </span>
                         </div>
                     </div>
@@ -111,20 +111,20 @@
                             <re-captcha id="recaptcha"
                                         required 
                                         [siteKey]="siteKey"
-                                        (resolved)="resolved($event)"
                                         (error)="errorFound($event)"
                                         formControlName="recaptcha">
                             </re-captcha>
                             <span class="recaptchaError position-absolute p-2 ms-1 bg-danger small muted text-light rounded-0         rounded-bottom"
                                 *ngIf="inputInvalid('recaptcha')">
-                                Comprobación no superada
+                                ¡Vaya! ¿No serás un robot?
                             </span>
                         </div>
 
                     </div>
                     <div class="col-12 col-md-3 text-center text-md-end d-md-flex align-items-center">
                         <button type="submit" 
-                                class="btn btn-lg btn-warning text-light">
+                                class="btn btn-lg btn-warning text-light"
+                                [class.disable]="statusMail=='sending'">
                                 Enviar
                         </button>
                     </div>
@@ -133,19 +133,19 @@
             </form>
         </div>
     
-    <code>
+    <!-- <code>
         <ul>
             <li>Nombre - {{ inputValid('nombre') }}</li>
             <li>Email - {{ inputValid('email') }}</li>
             <li>Asunto - {{ inputValid('asunto') }}</li>
             <li>Mensaje - {{ inputValid('mensaje') }} - {{ inputLength('mensaje') }} - {{ contactForm.controls['mensaje'].errors | json }}</li>
-            <!-- <li>Operación - {{ inputValid('operation') }}</li> -->
+            <li>Operación - {{ inputValid('operation') }}</li>
             <li>Recaptcha - {{ inputValid('recaptcha') }}</li>
             <li class="mt-3">FORM - {{ formValid() }} - {{ formStatus() }}</li>
             <li>SUBMITTED - {{ submitted }}</li>
         </ul>
         
-    </code>
+    </code> -->
     
         <div class="row my-5">
             
@@ -175,5 +175,14 @@
 </div>
 
 <!-- SUBMIT ALERT -->
-<!-- <ngb-alert #selfClosingAlert *ngIf="successMessage" type="success" (closed)="successMessage = ''">{{ successMessage }}
-</ngb-alert> -->
+<ngb-alert #alert 
+    class="fixed-top text-center mx-auto"
+    id="alertSuccess"
+    *ngIf="showAlert" 
+    type="success" 
+    (closed)="showAlert=false">
+    <h5 class="my-auto">
+        <i class="fa-solid fa-circle-check fs-3"></i>
+        Mensaje enviado
+    </h5>
+</ngb-alert>

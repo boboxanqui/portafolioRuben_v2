@@ -1,7 +1,10 @@
-import { ThisReceiver } from '@angular/compiler';
-import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, NgForm, ValidationErrors, Validators } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
+import { message } from 'src/app/interfaces/interfaces';
 import { environment } from 'src/environments/environment';
+import { textChangeRangeIsUnchanged } from 'typescript';
+import { MailingService } from '../services/mailing.service';
 import { notARobotService } from '../services/notARobot.service';
 
 @Component({
@@ -14,21 +17,37 @@ export class ContactComponent implements OnInit {
   constructor( 
     private fb: FormBuilder,
     private notARobot: notARobotService,
+    private mailing: MailingService
   ) {
       this.operationResult = 2
     }
     
     ngOnInit(): void {
       this.submitted = false;
-      this.notARobot.newOperation();
-      console.log(this.operationResult);
+      // this.notARobot.newOperation();
+      // console.log(this.operationResult);
+      this.mailing.mailStatus$
+        .subscribe( resp => {
+          this.statusMail = resp 
+          if( resp === 'sent'){
+            this.launchAlert()
+            this.submitted = false;
+            this.contactForm.reset({
+              mensaje: ''
+            })
+          }
+        })
       
     }
+
+  @ViewChild( 'alert', {static: false} ) alert: NgbAlert | undefined
     
   emailPattern: RegExp = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
   submitted:boolean = false;
   operationResult: number = 0
   siteKey: string = environment.reCaptcha.webKey
+  statusMail: string = '';
+  showAlert: boolean = false;
 
   contactForm: FormGroup = this.fb.group({
     nombre: [ '', [Validators.required, Validators.minLength(2)] ],
@@ -55,7 +74,7 @@ export class ContactComponent implements OnInit {
     if( this.contactForm.controls['mensaje'].errors?.['required']){
       return 'Mensaje obligatorio'
     } else if (this.contactForm.controls['mensaje'].errors?.['maxlength']){
-      return 'Mensaje demasiado largo, máximo 500 carácteres'
+      return 'Mensaje demasiado largo, máximo 500 carácteres.'
     }
     return
   }
@@ -71,8 +90,19 @@ export class ContactComponent implements OnInit {
   onSubmit(){
     this.submitted = true;
     if( this.formValid() ){
-      
+      const newMessage: message = {
+        name: this.contactForm.get('nombre')?.value,
+        email: this.contactForm.get('email')?.value,
+        subject: this.contactForm.get('asunto')?.value,
+        body: this.contactForm.get('mensaje')?.value,
+      }
+      this.mailing.sendEmail( newMessage )      
     }
+  }
+
+  launchAlert(){
+    this.showAlert = true;
+    setTimeout( () => this.showAlert = false, 3000)
   }
 
   // ReCaptcha

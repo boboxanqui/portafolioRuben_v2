@@ -46,3 +46,12 @@
     z-index: -1;
     transform: translateY(-5px);
 }
+
+
+/* ALERT */
+
+#alertSuccess{
+    width: clamp(250px, 50vw, 1000px);
+    top: 50px;
+    animation: fadeInFromTop .2s ease;
+}

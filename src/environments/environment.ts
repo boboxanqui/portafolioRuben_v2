@@ -6,6 +6,12 @@ export const environment = {
   production: false,
   reCaptcha: {
     webKey: '6Le1KSkhAAAAAKnIxCBl3P-nQuUnAW39cO4OCYkT',
+  },
+  smtp: {
+    password: '0A02EA6684381545A4AE7782C58D37B704FE',
+    server: 'smtp.elasticemail.com',
+    port: 2525,
+    secureToken: 'e3f76226-a3ef-4a8d-80c8-8ce9d12ae767'
   }
 };
 
