@@ -37,3 +37,14 @@
 .menu-btn-opened span:nth-child(3) {
     transform: rotate(-45deg) translateY(-7px) translateX(7px);
 }
+
+// Menu Links
+
+.nav-item{
+    width: 140px;
+}
+
+.nav-link:hover{
+    font-weight: 400;
+
+}

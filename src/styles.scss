@@ -175,6 +175,9 @@ app-common {
     .swiper{
         animation: none;
     }
+    .nav-item .nav-link{
+        width: 100vw;
+    }
 }
 
 @media screen and (max-width: 400px) {
